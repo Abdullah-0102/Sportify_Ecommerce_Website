@@ -43,7 +43,7 @@
     </div>
       
   
-  <section class="row row1">
+  <!-- <section class="row row1">
     <div class="col-5 position-relative">
         <img class="img-fluid" style="height: 100%; object-fit:cover" src="assets/Cat-1.jpg" alt="Men Category">
         <button class="img-overlay-btn">Men Top</button>
@@ -59,10 +59,42 @@
         <button class="img-overlay-btn">Tracksuits</button>
     </div>
 
-  </section>
+  </section> -->
     
   </div>
 
+  <section class="top-categories row">
+
+    <div class="col-md-6 col-10" style="position:relative">
+    <img class="img-fluid" style="height: 100%; object-fit:cover;" src="assets/Cat-1.jpg" alt="Men Category">
+    <button  style="position:absolute; padding:10px; left:20%; right:20%; bottom:10%; min-width:150px;">
+    <span style="font-size:80%;">Men Top</span></button>
+    </div>
+
+    <div class="col-md-6 col-10">
+
+      <div class="row">
+      <div class="col-6">
+        <div style="position:relative">
+          <img class="img-fluid" style="height: 50%; object-fit:cover;" src="assets/Cat-2.jpg" alt="Men Category">
+          <button  style="position:absolute; padding:10px; left:20%; right:20%; bottom:10%; min-width:100px;">
+    <span style="font-size:80%;">Trousers</span></button>
+        </div>
+        <div style="position:relative">
+          <img class="img-fluid" style="height: 50%; object-fit:cover;" src="assets/Cat-3.jpg" alt="Men Category">
+          <button  style="position:absolute; padding:10px; left:20%; right:20%; bottom:10%; min-width:100px;">
+    <span style="font-size:80%;">Shorts</span></button>
+        </div>
+    </div>
+    <div class="col-6" style="position:relative">
+    <img class="img-fluid" style="height: 100%; object-fit:cover;" src="assets/Cat-4.jpg" alt="Men Category">
+    <button  style="position:absolute; padding:10px; left:20%; right:20%; bottom:10%; min-width:120px;">
+    <span style="font-size:80%;">Tracksuits</span></button>
+    </div>
+      </div>
+      
+    </div>
+  </section>
 
   <!-- Services Section -->
   <section class="services">
