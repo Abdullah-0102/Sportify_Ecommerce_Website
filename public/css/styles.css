@@ -1,0 +1,498 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+::selection {
+    color: white;
+    background-color: gray;
+}
+
+
+.navigation {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
+}
+
+.logo {
+    height: 100px;
+    width: 100px;
+    transition: .2s;
+}
+
+.color {
+    color: #212529;
+}
+
+.nav-input {
+    border: none;
+    background: transparent;
+}
+
+.nav-input:focus {
+    outline: none;
+}
+
+.search {
+    border: 1px solid gray;
+    border-radius: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: .5em;
+    padding-bottom: 0.5em;
+    display: inline;
+    margin: .7em .7em .7em 0em;
+
+}
+
+#hide-search-icon {
+    display: none;
+}
+
+.icon {
+    margin: .5em;
+}
+
+#right-nav-items {
+    padding-left: 0em;
+}
+
+.carousel-inner img {
+    height: 40rem;
+}
+
+footer {
+    color: white;
+    background-color: #111111;
+}
+
+.footer-top {
+    padding-top: 5em;
+    padding-bottom: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2em;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.footer-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-section-heading {
+    flex: 2;
+}
+
+.send-mail-input-box {
+    display: inline-block;
+    border: 1px solid gray;
+    border-radius: 1px;
+}
+
+.info-row {
+    color: white;
+    text-decoration: none;
+}
+
+.info-row:hover {
+    text-decoration: none;
+    color: gray;
+}
+
+.small-footer-top {
+    display: none;
+}
+/* --------Services Section----------- */
+.services{
+    padding: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+.service-box{
+    width: 30%;
+    display: flex;
+    flex-direction: column; 
+    text-align: center;
+}
+.service-logo{
+    scale: 1.5;
+    margin: 1.5em;
+}
+
+/* Multi Range Slider css */
+
+
+
+.price-input{
+  width: 100%;
+  display: flex;
+  margin: 30px 0 35px;
+}
+.price-input .field{
+  display: flex;
+  width: 100%;
+  height: 1.5em;
+  align-items: center;
+}
+.field span{
+    margin: 1em;
+}
+.field input{
+  width: 100%;
+  height: 100%;
+  outline: none;
+  font-size: 10px;
+  margin-left: 5px;
+  border-radius: 5px;
+  text-align: center;
+  border: 1px solid #999;
+  -moz-appearance: textfield;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.price-input .separator{
+  width: 130px;
+  display: flex;
+  font-size: 19px;
+  align-items: center;
+  justify-content: center;
+}
+.slider{
+  height: 2px;
+  position: relative;
+  background: #ddd;
+  border-radius: 5px;
+}
+.slider .progress{
+  height: 100%;
+  left: 0%;
+  right: 0%;
+  position: absolute;
+  border-radius: 5px;
+  background: gray;
+}
+.range-input{
+  position: relative;
+}
+.range-input input{
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  top: -2px;
+  background: none;
+  pointer-events: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+input[type="range"]::-webkit-slider-thumb{
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background: gray;
+  pointer-events: auto;
+  -webkit-appearance: none;
+  box-shadow: 0 0 6px rgba(0,0,0,0.05);
+}
+input[type="range"]::-moz-range-thumb{
+  height: 10px;
+  width: 10px;
+  border: none;
+  border-radius: 50%;
+  background: gray;
+  pointer-events: auto;
+  -moz-appearance: none;
+  box-shadow: 0 0 6px rgba(0,0,0,0.05);
+}
+
+.product-hr{
+    background: #222222;
+    color: #222222;
+    height: 1px;
+    width: 3em;
+    margin-top: .2em;
+}
+
+
+.flexCheckDefault{
+    accent-color: gray;
+}
+
+.product-hr + ul {
+    list-style: none;
+}
+
+.product-hr + ul li strong::before {
+    content: "+ ";
+}
+
+
+/* .products{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.product-box{
+    flex: 1 1 300px;
+    position: relative;
+    overflow: hidden;
+    margin: 10px
+}
+
+
+.product-box .image img{
+    padding: 10px;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+} */
+
+.product-box{
+    position: relative;
+    overflow: hidden;
+
+}
+
+.image{
+    height: 80%;
+}
+.image img{
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+/* Contact Us Form Styling */
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+@media screen and (min-width:992px) and (max-width : 1200px) {
+    .product-box {
+        height: 30em;
+    }
+}
+@media screen and (max-width : 992px) {
+    nav .navbar-brand {
+        margin-right: 0;
+    }
+
+    #hide-search-icon {
+        display: inline-block;
+    }
+
+    .icon {
+        scale: 0.8
+    }
+
+    .search {
+        display: none;
+    }
+
+    .carousel-inner img {
+        height: 30rem;
+    }
+
+    .footer-top {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .footer-box {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width : 768px) {
+
+    #user,
+    #heart {
+        display: none;
+    }
+
+    .carousel-inner img {
+        height: 20rem;
+    }
+
+    div.small-footer-top {
+        display: flex;
+        flex-direction: column;
+    }
+
+    div.small-footer-top button {
+        text-align: start;
+        color: white;
+    }
+
+    div.small-footer-top button:hover {
+        color: gray;
+    }
+
+    div.small-footer-top button:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+    div.footer-top {
+        display: none;
+    }
+
+    .sm-ft-opt {
+        display: flex;
+        justify-content: space-between
+    }
+
+    .services{
+        flex-direction: column;
+    }
+    .service-logo{
+        scale: 1.2;
+        margin: 1.5em;
+    }
+    .service-box{
+        width: 70%;
+    }
+}
+
+
+
+
+
+
+
+/* Abdullah's Styling */
+.container{
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 95vh;
+    /* background-color: aqua; */
+    margin-bottom: 5%;
+}
+
+.top-categories {
+    text-align: center ;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5%;
+    padding-bottom: 3%;
+    /* background-color: aquamarine; */
+}
+.top-categories p{
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+}
+
+.categories {
+    display: flex;
+    flex-direction: row;
+    height: 67vh;
+    margin-top: 5%;
+    /* background-color: blueviolet; */
+}
+
+.small-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.col-3.cat-2 img:first-child {
+    margin-bottom: 10%; 
+}
+  
+  
+.row1 {
+    position: relative;
+}
+
+.row1 img {
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Set the border color and transparency */
+}
+
+.row1 img:hover {
+    transform: scale(1.08);
+    transition: transform 0.5s ease-in-out, border 0.1s ease-in-out;
+    border: 2px solid rgba(0, 0, 0, 0.4); /* Adjust the border size and color on hover */
+}
+
+
+
+ /* Styling of Buttons in the top categories section  */
+.row1 .position-relative{
+    position: relative;
+}
+
+.row1 .img-overlay-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 350%);
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 10px 15px; 
+    border: none;
+    cursor: pointer;
+}
+
+.row1 .img-overlay-btn2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -200%);
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 10px 15px; 
+    border: none;
+    cursor: pointer;
+}
+.row1 .img-overlay-btn3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 450%);
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 10px 15px; 
+    border: none;
+    cursor: pointer;
+}
+
+.row1 .img-overlay-btn:hover {
+    background-color: black; 
+    color: white; 
+}
+.row1 .img-overlay-btn2:hover {
+    background-color: black; 
+    color: white; 
+}
+.row1 .img-overlay-btn3:hover {
+    background-color: black; 
+    color: white; 
+}
+
+
+
+
+
+
+  
+
+
