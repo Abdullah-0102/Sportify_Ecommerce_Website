@@ -63,55 +63,101 @@
     
   </div>
 
-  <section class="top-categories row">
-
-    <div class="col-md-6 col-10" style="position:relative">
-    <img class="img-fluid" style="height: 100%; object-fit:cover;" src="assets/Cat-1.jpg" alt="Men Category">
-    <button  style="position:absolute; padding:10px; left:20%; right:20%; bottom:10%; min-width:150px;">
-    <span style="font-size:80%;">Men Top</span></button>
+  <section class="categories row">
+    <div class="col-md-6 col-10 category-container">
+        <img class="img-fluid" src="assets/Cat-1.jpg" alt="Men Category">
+        <button class="category-button"><span>Men Top</span></button>
     </div>
 
     <div class="col-md-6 col-10">
+        <div class="row">
+            <div class="col-6">
+                <div class="category-container">
+                    <img class="img-fluid" src="assets/Cat-2.jpg" alt="Men Category">
+                    <button class="category-button"><span>Trousers</span></button>
+                </div>
+                <div class="category-container">
+                    <img class="img-fluid" src="assets/Cat-3.jpg" alt="Men Category">
+                    <button class="category-button"><span>Shorts</span></button>
+                </div>
+            </div>
+            <div class="col-6 category-container">
+                <img class="img-fluid" src="assets/Cat-4.jpg" alt="Men Category">
+                <button class="category-button"><span>Tracksuits</span></button>
+            </div>
+        </div>
+    </div>
 
-      <div class="row">
-      <div class="col-6">
-        <div style="position:relative">
-          <img class="img-fluid" style="height: 50%; object-fit:cover;" src="assets/Cat-2.jpg" alt="Men Category">
-          <button  style="position:absolute; padding:10px; left:20%; right:20%; bottom:10%; min-width:100px;">
-    <span style="font-size:80%;">Trousers</span></button>
+</section>
+
+
+
+
+
+
+
+
+  <!-- <section class="top-categories row">
+
+    <div class="col-md-6 col-10">
+        <img class="img-fluid" src="assets/Cat-1.jpg" alt="Men Category">
+        <button><span>Men Top</span></button>
+    </div>
+
+    <div class="col-md-6 col-10">
+        <div class="row">
+            <div class="col-6">
+                <div>
+                    <img class="img-fluid" src="assets/Cat-2.jpg" alt="Men Category">
+                    <button><span>Trousers</span></button>
+                </div>
+                <div>
+                    <img class="img-fluid" src="assets/Cat-3.jpg" alt="Men Category">
+                    <button><span>Shorts</span></button>
+                </div>
+            </div>
+            <div class="col-6">
+                <img class="img-fluid" src="assets/Cat-4.jpg" alt="Men Category">
+                <button><span>Tracksuits</span></button>
+            </div>
         </div>
-        <div style="position:relative">
-          <img class="img-fluid" style="height: 50%; object-fit:cover;" src="assets/Cat-3.jpg" alt="Men Category">
-          <button  style="position:absolute; padding:10px; left:20%; right:20%; bottom:10%; min-width:100px;">
-    <span style="font-size:80%;">Shorts</span></button>
-        </div>
     </div>
-    <div class="col-6" style="position:relative">
-    <img class="img-fluid" style="height: 100%; object-fit:cover;" src="assets/Cat-4.jpg" alt="Men Category">
-    <button  style="position:absolute; padding:10px; left:20%; right:20%; bottom:10%; min-width:120px;">
-    <span style="font-size:80%;">Tracksuits</span></button>
-    </div>
-      </div>
-      
-    </div>
-  </section>
+
+</section> -->
+
+
+
+
+
+
+
+
+
 
   <!-- Services Section -->
   <section class="services">
     <div id="truck" class="service-box">
       <i class="p-2 fa-solid fa-truck-fast fa-2xl service-logo"></i>
-      <h5>WE DELIVER ALL OVER PAKISTAN</h5>
-      <p>Shipping only Rs 250/-</p>
+      <p class="bold-text">WE DELIVER ALL OVER PAKISTAN</p>
+      <p class="para-text">Shipping only Rs 250/-</p>
     </div>
     <div id="truck" class="service-box">
       <i class="p-2 fa-solid fa-headset fa-2xl service-logo"></i>
-      <h5>SUPPORT 24/7</h5>
-      <p>Contact us 24 hours a day, 7 days a week.</p>
+      <p class="bold-text">SUPPORT 24/7</p>
+      <p class="para-text">Contact us 24 hours a day, 7 days a week.</p>
     </div>
     <div id="truck" class="service-box">
       <i class="p-2 fa-solid fa-hand-holding-dollar fa-2xl service-logo"></i>
-      <h5>RETURN AND EXCHANGE</h5>
-      <p>Simply return it within 14 days for an exchange. Terms and conditions apply.</p>
+      <p class="bold-text">RETURN AND EXCHANGE</p>
+      <p class="para-text">Simply return it within 14 days for an exchange. Terms and conditions apply.</p>
     </div>
   </section>
 @endsection
+
+
+
+
+
+<!-- Every table will have a model, 10 tables then 10 models. -->
+<!-- If table 'student', then model name 'students' -->
+<!-- Create a table attribute in the model class so that the model knows which table it has to communicate with -->

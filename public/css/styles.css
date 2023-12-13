@@ -115,9 +115,13 @@ footer {
 .small-footer-top {
     display: none;
 }
+
+
+
+
 /* --------Services Section----------- */
 .services{
-    padding: 5em;
+    padding: 3em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -130,14 +134,23 @@ footer {
     text-align: center;
 }
 .service-logo{
-    scale: 1.5;
+    scale: 1.2;
     margin: 1.5em;
 }
 
+.bold-text {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.para-text {
+    font-size: 13px;
+}
+
+
+
+
 /* Multi Range Slider css */
-
-
-
 .price-input{
   width: 100%;
   display: flex;
@@ -384,115 +397,104 @@ input[type="range"]::-moz-range-thumb{
 
 /* Abdullah's Styling */
 .container{
+    margin-bottom: 4%;
+    margin-top: 5%;
     margin-left: 10%;
     margin-right: 10%;
-    height: 95vh;
+    height: 10%;
     /* background-color: aqua; */
-    margin-bottom: 5%;
 }
 
 .top-categories {
     text-align: center ;
     align-items: center;
     justify-content: center;
-    padding-top: 5%;
-    padding-bottom: 3%;
-    /* background-color: aquamarine; */
 }
 .top-categories p{
     font-family:Georgia, 'Times New Roman', Times, serif ;
 }
 
-.categories {
-    display: flex;
-    flex-direction: row;
-    height: 67vh;
-    margin-top: 5%;
-    /* background-color: blueviolet; */
+.category-button {
+    position: absolute;
+    padding: 10px;
+    left: 30%;
+    right: 30%;
+    bottom: 10%;
+    min-width: 100px;
 }
 
-.small-container{
-    display: flex;
-    flex-direction: row;
-}
-
-.col-3.cat-2 img:first-child {
-    margin-bottom: 10%; 
-}
-  
-  
-.row1 {
+.category-container {
     position: relative;
 }
 
-.row1 img {
+.img-fluid {
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* .row {
+    margin-left: 10%;
+    margin-right: 10%;
+} */
+
+
+/* .top-categories .col-md-6,
+.top-categories .col-10 {
     position: relative;
-    border: 1px solid rgba(0, 0, 0, 0.2); /* Set the border color and transparency */
 }
 
-.row1 img:hover {
-    transform: scale(1.08);
-    transition: transform 0.5s ease-in-out, border 0.1s ease-in-out;
-    border: 2px solid rgba(0, 0, 0, 0.4); /* Adjust the border size and color on hover */
+.top-categories img.img-fluid {
+    height: 100%;
+    object-fit: cover;
 }
 
-
-
- /* Styling of Buttons in the top categories section  */
-.row1 .position-relative{
-    position: relative;
-}
-
-.row1 .img-overlay-btn {
+.top-categories button {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 350%);
-    background-color: rgba(255, 255, 255, 0.8); 
-    padding: 10px 15px; 
-    border: none;
-    cursor: pointer;
+    padding: 10px;
+    left: 30%;
+    right: 30%;
+    bottom: 10%;
+    width: 250px;
 }
 
-.row1 .img-overlay-btn2 {
+.top-categories span {
+    font-size: 80%;
+}
+
+.top-categories .row .col-6 {
+    width: 50%;
+    position: relative; 
+}
+
+.top-categories .row img.img-fluid {
+    height: 50%;
+    object-fit: cover;
+}
+
+.top-categories .row button {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -200%);
-    background-color: rgba(255, 255, 255, 0.8); 
-    padding: 10px 15px; 
-    border: none;
-    cursor: pointer;
+    padding: 10px;
+    left: 20%;
+    right: 20%;
+    bottom: 10%;
+    min-width: 100px;
 }
-.row1 .img-overlay-btn3 {
+
+.top-categories .row span {
+    font-size: 80%;
+}
+
+.top-categories .row .col-6:last-child img.img-fluid {
+    height: 100%;
+    object-fit: cover;
+}
+
+.top-categories .row .col-6:last-child button {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 450%);
-    background-color: rgba(255, 255, 255, 0.8); 
-    padding: 10px 15px; 
-    border: none;
-    cursor: pointer;
-}
-
-.row1 .img-overlay-btn:hover {
-    background-color: black; 
-    color: white; 
-}
-.row1 .img-overlay-btn2:hover {
-    background-color: black; 
-    color: white; 
-}
-.row1 .img-overlay-btn3:hover {
-    background-color: black; 
-    color: white; 
-}
-
-
-
-
-
-
-  
-
-
+    padding: 10px;
+    left: 20%;
+    right: 20%;
+    bottom: 10%;
+    min-width: 120px;
+} */
