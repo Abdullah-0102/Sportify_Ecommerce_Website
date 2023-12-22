@@ -159,25 +159,25 @@
             health, resistance training can help you get there.</i></p>
   </div>
 
-  <section class="row products">
-      <div class="col-xl-3 col-lg-4 col-md-6 col-6 product-box">
+  <section class="row products-1">
+      <div class="col-xl-3 col-lg-4 col-md-6 col-6 product-box-1">
         <div class="images"><img src="assets/Cat-1.jpg" alt=""></div>
         <h6><strong>Black 3-Stripe DriFit Tee</strong></h6>
         <span>Rs. 900</span>
       </div>
 
-      <div class="col-xl-3 col-lg-4 col-md-6 col-6 product-box">
+      <div class="col-xl-3 col-lg-4 col-md-6 col-6 product-box-1">
         <div class="images"><img src="assets/Cat-2.jpg" alt=""></div>
         <h6><strong>3-Stripe DriFit Trouser</strong></h6>
         <span>Rs. 1,600</span>
       </div>
 
-      <div class="col-xl-3 col-lg-4 col-md-6 col-6 product-box">
+      <div class="col-xl-3 col-lg-4 col-md-6 col-6 product-box-1">
         <div class="images"><img src="assets/Cat-3.jpg" alt=""></div>
         <h6><strong>Adidas Polyster Short</strong></h6>
         <span>Rs. 2,000</span>
       </div>
-      <div class="col-xl-3 col-lg-4 col-md-6 col-6 product-box">
+      <div class="col-xl-3 col-lg-4 col-md-6 col-6 product-box-1">
         <div class="images"><img src="assets/Cat-4.jpg" alt=""></div>
         <h6><strong>Half-Stripes Drifit Tracksuit</strong></h6>
         <span>Rs. 2,300</span>

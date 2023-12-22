@@ -33,11 +33,11 @@
       <a href="#" class="navbar-text" id="open-cart-sidebar"><i class="fa-solid fa-cart-shopping fa-xl icon color"></i></a>
     </div>
 
-    <section id="cart-sidebar">
+    <!-- <section id="cart-sidebar">
       <div class="close-sidebar mb-2" id="close-cart-sidebar">
         <i class="fa-solid fa-xmark"></i>
       </div>
-    </section>
+    </section> -->
 
     <div class="collapse navbar-collapse" id="navbar-items">
       <div class="navbar-nav">

@@ -440,12 +440,6 @@ input[type="range"]::-moz-range-thumb{
     }
 }
 
-
-
-
-
-
-
 /* Abdullah's Styling */
 .container{
     margin-bottom: 40px;
@@ -476,7 +470,7 @@ input[type="range"]::-moz-range-thumb{
     /* margin-right: 10px; */
     /* margin-left: 10px; */
 }
-.img-fluid {
+.img-fluid-1 {
     height: 100%;
     object-fit: cover;
     border: 1px solid #222222 ;
@@ -484,7 +478,7 @@ input[type="range"]::-moz-range-thumb{
     max-width: 100%;
     max-height: 100%;
 }
-.category-container:hover .img-fluid {
+.category-container:hover .img-fluid-1 {
     transform: scale(1.1);
 }
 
@@ -519,21 +513,8 @@ input[type="range"]::-moz-range-thumb{
     transition: transform 0.5s;
 }
 
-/* .row {
-    margin-left: 10%;
-    margin-right: 10%;
-} */
 
 
-/* .top-categories .col-md-6,
-.top-categories .col-10 {
-    position: relative;
-}
-
-.top-categories img.img-fluid {
-    height: 100%;
-    object-fit: cover;
-}
 .category-button1 {
     position: absolute;
     padding: 10px;
@@ -647,12 +628,12 @@ input[type="range"]::-moz-range-thumb{
     font-weight: bold;
 }
 
-.products{
+.products-1{
     margin-left: 50px;
     margin-right: 50px;
 }
 
-.product-box{
+.product-box-1{
     position: relative;
     margin-top: 15px;
     margin-bottom: 30px;
