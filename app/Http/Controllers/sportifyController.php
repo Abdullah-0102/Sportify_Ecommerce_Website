@@ -17,4 +17,11 @@ class sportifyController extends Controller
     public function products(){
         return view("products");
     }
+
+    public function checkOutPage(){
+        return view("checkoutform");
+    }
+    public function preorder(){
+        return view("preorderpage");
+    }
 }

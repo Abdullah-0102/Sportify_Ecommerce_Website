@@ -14,5 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'App\Http\Controllers\sportifyController@index')->name('index');
+Route::get('/checkout', 'App\Http\Controllers\sportifyController@checkOutPage')->name('checkOutPage');
+Route::get('/index', 'App\Http\Controllers\sportifyController@index')->name('index');
 Route::get('/contactUs', 'App\Http\Controllers\sportifyController@contactUs')->name('contactUs');
 Route::get('/products', 'App\Http\Controllers\sportifyController@products')->name('products');
+Route::get('/preorder', 'App\Http\Controllers\sportifyController@preorder')->name('preorder');

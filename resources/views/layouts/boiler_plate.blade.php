@@ -12,6 +12,7 @@
   
   <link rel="icon" href="assets/favicon.png">
   <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+  <script src="{{ asset('js/indexcode.js') }}" defer></script>
   <title>Sportify Wear</title>
   <style>
     
@@ -43,7 +44,7 @@
         <a class="nav-item nav-link active color" href="{{ route('index') }}">HOME</a>
         <a class="nav-item nav-link color" href="{{ route('products') }}">MEN</a>
         <a class="nav-item nav-link color" href="Sale">SALE</a>
-        <a class="nav-item nav-link color" href="PreOrder">PREORDER</a>
+        <a class="nav-item nav-link color" href="{{ route('preorder') }}">PREORDER</a>
         <a class="nav-item nav-link color" href="{{ route('contactUs') }}">CONTACT US</a>
       </div>
       <div class="nav-item nav-link ml-auto" id="right-nav-items">
@@ -116,7 +117,7 @@
       </button>
       <section class="p-4 collapse p-1 footer-box" id="footer-customer-care">
         <p><a href="#" class="m-auto info-row">MY ACCOUNT</a></p>
-        <p><a href="contactUs.html" class="m-auto info-row">CONTACT US</a></p>
+        <p><a href="contactUs" class="m-auto info-row">CONTACT US</a></p>
         <p><a href="#" class="m-auto info-row">MY WISHLIST</a></p>
         <p><a href="#" class="m-auto info-row">FAQs</a></p>
         <p><a href="#" class="m-auto info-row">RETURN AND EXCHANGE</a></p>
@@ -177,7 +178,7 @@
       <section class="p-1 footer-box">
         <p class="font-weight-bold footer-section-heading">CUSTOMER CARE</p>
         <p><a href="#" class="m-auto info-row">MY ACCOUNT</a></p>
-        <p><a href="contactUs.html" class="m-auto info-row">CONTACT US</a></p>
+        <p><a href="contactUs" class="m-auto info-row">CONTACT US</a></p>
         <p><a href="#" class="m-auto info-row">MY WISHLIST</a></p>
         <p><a href="#" class="m-auto info-row">FAQs</a></p>
         <p><a href="#" class="m-auto info-row">RETURN AND EXCHANGE</a></p>

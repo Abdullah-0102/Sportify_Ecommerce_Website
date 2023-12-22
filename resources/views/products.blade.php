@@ -59,11 +59,11 @@
 
     <div class="collapse navbar-collapse" id="navbar-items">
       <div class="navbar-nav">
-        <a class="nav-item nav-link active color" href="index.html">HOME</a>
-        <a class="nav-item nav-link color" href="Men">MEN</a>
+        <a class="nav-item nav-link active color" href="{{ route('index') }}">HOME</a>
+        <a class="nav-item nav-link color" href="{{ route('products') }}">MEN</a>
         <a class="nav-item nav-link color" href="Sale">SALE</a>
-        <a class="nav-item nav-link color" href="PreOrder">PREORDER</a>
-        <a class="nav-item nav-link color" href="contactUs.html">CONTACT US</a>
+        <a class="nav-item nav-link color" href="{{ route('preorder') }}">PREORDER</a>
+        <a class="nav-item nav-link color" href="{{ route('contactUs') }}">CONTACT US</a>
       </div>
       <div class="nav-item nav-link ml-auto" id="right-nav-items">
         <div class="search">
