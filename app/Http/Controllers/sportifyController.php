@@ -65,4 +65,11 @@ class sportifyController extends Controller
     
     
     
+
+    public function checkOutPage(){
+        return view("checkoutform");
+    }
+    public function preorder(){
+        return view("preorderpage");
+    }
 }
