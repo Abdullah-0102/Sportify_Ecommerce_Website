@@ -1,0 +1,206 @@
+.info-item {
+    cursor: pointer;
+    padding: 1.2em;
+    font-size: .8em;
+    font-weight: bolder;
+}
+
+.info-item:hover {
+    color: gray;
+}
+
+.plus {
+    font-size: medium;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #222222;
+    color: white;
+    height: 30px;
+    min-width: 30px;
+    border-radius: .2em;
+}
+
+.table-text {
+    font-size: small;
+    background-color: #ddddddb1;
+}
+
+.info-text,
+#tax,
+#sold {
+    font-size: small;
+}
+
+.gray-color {
+    color: gray;
+}
+
+.dark-gray-color {
+    color: rgb(81, 81, 81);
+}
+
+.info-unordered-list {
+    list-style: inside;
+}
+
+.p-imgs {
+    opacity: .6;
+}
+
+.p-imgs:hover,
+.clicked {
+    opacity: 1;
+}
+
+.scaling-image {
+    /* Set initial transition for smooth scaling */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Apply scale transformation on hover */
+.scaling-image:hover {
+    transform: scale(1.1);
+    /* Adjust the scale factor as needed */
+}
+
+
+#p-title,
+#price {
+    display: inline-block;
+    font-size: medium;
+    font-weight: bold;
+    padding-bottom: .5em;
+}
+
+#price {
+    font-size: 1.5em;
+    color: gray;
+    font-weight: 100;
+}
+
+#sold {
+    display: inline-block;
+    margin: 1.5em 0;
+}
+
+
+.blinking-text {
+    animation: blink 1s infinite;
+}
+
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    /* Set text opacity to 0 at the start */
+    50% {
+        opacity: 1;
+    }
+
+    /* Set text opacity to 1 halfway through */
+    100% {
+        opacity: 0;
+    }
+
+    /* Set text opacity to 0 at the end */
+}
+
+.color-label,
+.size-label,
+.quantity {
+    font-weight: bold;
+    margin: 1.5em 0 .8em;
+}
+
+.select-color label span,
+.select-size span {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    margin: 2px;
+    border-radius: 50%;
+}
+
+.select-size span {
+    text-align: center;
+    height: 25px;
+    width: 25px;
+}
+
+.select-color label{
+    height: 28px;
+    width: 28px
+}
+
+.adjust{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    width: 80%;
+}
+
+#background{
+    height: 80%; 
+    background-image: url("{{ asset('assets/bg.jpg') }}"); 
+    background-size:cover;
+}
+
+.select-color label,
+.select-size label {
+    user-select: none;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 3px;
+}
+
+.select-size label {
+    border: 1px solid rgba(128, 128, 128, 0.393);
+    padding: 2px;
+    transition: .3s;
+}
+
+.select-color input[type="radio"],
+.select-size input[type="radio"] {
+    display: none;
+}
+
+.select-color input[type="radio"]:checked+label {
+    border: 2px solid gray;
+}
+
+.size-options input[type="radio"]:checked+label {
+    background-color: #222222;
+    color: white;
+}
+
+#item-count {
+    margin: 10px;
+    user-select: none;
+    width: 150px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid #222222;
+    border-radius: 25px;
+}
+
+#item-count span,
+.add-to-cart {
+    cursor: pointer;
+}
+
+.add-to-cart {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    user-select: none;
+    width: 200px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background-color: #222222;
+    color: white;
+}

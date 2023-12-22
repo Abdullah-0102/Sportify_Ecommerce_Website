@@ -7,15 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
-  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  
-  <link rel="icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <link rel="icon" href="{{asset('assets/favicon.png')}}">
   <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+  @yield('css')
   <title>Sportify Wear</title>
-  <style>
-    
-  </style>
 </head>
 
 <body>
@@ -24,19 +21,22 @@
     <button class="navbar-toggler text-left" type="button" data-toggle="collapse" data-target="#navbar-items">
       <span><i class="fa-solid fa-bars fa-xl"></i></span>
     </button>
-    <a class="navbar-brand d-flex align-self-center" href="#"><img class="logo" src="{{ asset('assets/logo.png') }}"
-        alt="Sportify Wear"></a>
+    <a class="navbar-brand d-flex align-self-center" href="#"><img class="logo" src="{{ asset('assets/logo.png') }}" alt="Sportify Wear"></a>
 
 
 
     <div class="d-flex order-lg-1 pr-2">
-      <a href="#" class="navbar-text" id="hidden-search"><i class="fa-solid fa-magnifying-glass fa-xl icon color"
-          id="hide-search-icon"></i></a>
+      <a href="#" class="navbar-text" id="hidden-search"><i class="fa-solid fa-magnifying-glass fa-xl icon color" id="hide-search-icon"></i></a>
       <a href="#" class="navbar-text" id="user"><i class="fa-regular fa-user fa-xl icon color"></i></a>
       <a href="#" class="navbar-text" id="heart"><i class="fa-regular fa-heart fa-xl icon color"></i></a>
-      <a href="#" class="navbar-text" id="cart"><i class="fa-solid fa-cart-shopping fa-xl icon color"></i></a>
+      <a href="#" class="navbar-text" id="open-cart-sidebar"><i class="fa-solid fa-cart-shopping fa-xl icon color"></i></a>
     </div>
 
+    <section id="cart-sidebar">
+      <div class="close-sidebar mb-2" id="close-cart-sidebar">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+    </section>
 
     <div class="collapse navbar-collapse" id="navbar-items">
       <div class="navbar-nav">
@@ -56,26 +56,23 @@
     </div>
   </nav>
 
-  <div class="containerbp">
-    @yield('content')
-  </div>
-  
+  @yield('content')
+
 
   <!-- Footer Section -->
   <footer>
     <!-- Footer for small screens -->
     <div class="small-footer-top">
-      <button class="btn p-2" data-toggle="collapse" href="#get-in-touch" role="button" aria-expanded="false"
-        aria-controls="get-in-touch">
+      <button class="btn p-2" data-toggle="collapse" href="#get-in-touch" role="button" aria-expanded="false" aria-controls="get-in-touch">
         <span class="sm-ft-opt">
           <span class="font-weight-bold">GET IN TOUCH</span>
           <i class="fa-solid fa-plus"></i>
         </span>
       </button>
       <section class="p-4 collapse sm-ft-box" id="get-in-touch">
-        <a href="#"><img src="assets/white-logo.png" alt="Sportify Wear"></a>
+        <a href="#"><img src="{{ asset('assets/white-logo.png') }}" alt="Sportify Wear"></a>
         <p>
-          <i class="fa-solid fa-location-dot"></i> 
+          <i class="fa-solid fa-location-dot"></i>
           <span class="m-auto">Plot no D1/3 Sector 21 K.I.A Karachi</span>
         </p>
         <p>
@@ -93,8 +90,7 @@
           </span></p>
       </section>
 
-      <button class="btn p-2" type="button" data-toggle="collapse" data-target="#footer-categories"
-        aria-expanded="false" aria-controls="footer-categories">
+      <button class="btn p-2" type="button" data-toggle="collapse" data-target="#footer-categories" aria-expanded="false" aria-controls="footer-categories">
         <span class="sm-ft-opt">
           <span class="font-weight-bold">CATEGORIES</span>
           <i class="fa-solid fa-plus"></i>
@@ -107,8 +103,7 @@
         <p><a href="#" class="m-auto info-row">SALE</a></p>
       </section>
 
-      <button class="btn p-2" type="button" data-toggle="collapse" data-target="#footer-customer-care"
-        aria-expanded="false" aria-controls="footer-customer-care">
+      <button class="btn p-2" type="button" data-toggle="collapse" data-target="#footer-customer-care" aria-expanded="false" aria-controls="footer-customer-care">
         <span class="sm-ft-opt">
           <span class="font-weight-bold">CUSTOMER CARE</span>
           <i class="fa-solid fa-plus"></i>
@@ -124,8 +119,7 @@
         <p><a href="#" class="m-auto info-row">TERMS AND CONDITIONS</a></p>
       </section>
 
-      <button class="btn p-2" type="button" data-toggle="collapse" data-target="#footer-signup" aria-expanded="false"
-        aria-controls="footer-customer-care">
+      <button class="btn p-2" type="button" data-toggle="collapse" data-target="#footer-signup" aria-expanded="false" aria-controls="footer-customer-care">
         <span class="sm-ft-opt">
           <span class="font-weight-bold">NEWSLETTER SIGNUP</span>
           <i class="fa-solid fa-plus"></i>
@@ -146,7 +140,7 @@
     <div class="footer-top px-2 ">
 
       <section class="p-1 footer-box">
-        <a href="#"><img src="assets/white-logo.png" alt="Sportify Wear"></a>
+        <a href="#"><img src="{{ asset('assets/white-logo.png') }}" alt="Sportify Wear"></a>
         <p>
           <i class="fa-solid fa-location-dot"></i>
           <span class="m-auto">Plot no D1/3 Sector 21 K.I.A Karachi</span>
@@ -208,47 +202,18 @@
   </footer>
 
 
+  <script src="js/script.js"></script>
   <!-- FontAwesome JavaScript -->
   <script src="https://kit.fontawesome.com/fbe66d1c65.js" crossorigin="anonymous"></script>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 
-
-  
-
-
-
-
-
+  @yield('js')
 
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-

@@ -42,24 +42,6 @@
         In addition, our efficient quality control department cross checks each order before its shipped from our warehouses.</i></p>
     </div>
       
-  
-  <!-- <section class="row row1">
-    <div class="col-5 position-relative">
-        <img class="img-fluid" style="height: 100%; object-fit:cover" src="assets/Cat-1.jpg" alt="Men Category">
-        <button class="img-overlay-btn">Men Top</button>
-    </div>
-    <div class="col-3 cat-2 position-relative">
-        <img class="img-fluid" src="assets/Cat-2.jpg" alt="Shorts">
-        <button class="img-overlay-btn2">Trousers</button>
-        <img class="img-fluid" src="assets/Cat-3.jpg" alt="Trousers">
-        <button class="img-overlay-btn3">Shorts</button>
-    </div>
-    <div class="col-4 position-relative" >
-        <img class="img-fluid" style="height: 100%; object-fit:cover" src="assets/Cat-4.jpg" alt="Trousers">
-        <button class="img-overlay-btn">Tracksuits</button>
-    </div>
-
-  </section> -->
     
   </div>
 
@@ -89,50 +71,6 @@
     </div>
 
 </section>
-
-
-
-
-
-
-
-
-  <!-- <section class="top-categories row">
-
-    <div class="col-md-6 col-10">
-        <img class="img-fluid" src="assets/Cat-1.jpg" alt="Men Category">
-        <button><span>Men Top</span></button>
-    </div>
-
-    <div class="col-md-6 col-10">
-        <div class="row">
-            <div class="col-6">
-                <div>
-                    <img class="img-fluid" src="assets/Cat-2.jpg" alt="Men Category">
-                    <button><span>Trousers</span></button>
-                </div>
-                <div>
-                    <img class="img-fluid" src="assets/Cat-3.jpg" alt="Men Category">
-                    <button><span>Shorts</span></button>
-                </div>
-            </div>
-            <div class="col-6">
-                <img class="img-fluid" src="assets/Cat-4.jpg" alt="Men Category">
-                <button><span>Tracksuits</span></button>
-            </div>
-        </div>
-    </div>
-
-</section> -->
-
-
-
-
-
-
-
-
-
 
   <!-- Services Section -->
   <section class="services">

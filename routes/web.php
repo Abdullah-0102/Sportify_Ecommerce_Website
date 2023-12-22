@@ -16,3 +16,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'App\Http\Controllers\sportifyController@index')->name('index');
 Route::get('/contactUs', 'App\Http\Controllers\sportifyController@contactUs')->name('contactUs');
 Route::get('/products', 'App\Http\Controllers\sportifyController@products')->name('products');
+Route::get('/productDetail/{id}','App\Http\Controllers\sportifyController@productDetail')->name('productDetail');
