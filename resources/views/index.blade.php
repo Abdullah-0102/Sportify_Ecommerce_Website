@@ -41,6 +41,26 @@
       <p><i>All of our products are made out of premium fabrics and are designed to get you through the toughest of work out sessions.
         In addition, our efficient quality control department cross checks each order before its shipped from our warehouses.</i></p>
     </div>
+      
+  
+  <!-- <section class="row row1">
+    <div class="col-5 position-relative">
+        <img class="img-fluid" style="height: 100%; object-fit:cover" src="assets/Cat-1.jpg" alt="Men Category">
+        <button class="img-overlay-btn">Men Top</button>
+    </div>
+    <div class="col-3 cat-2 position-relative">
+        <img class="img-fluid" src="assets/Cat-2.jpg" alt="Shorts">
+        <button class="img-overlay-btn2">Trousers</button>
+        <img class="img-fluid" src="assets/Cat-3.jpg" alt="Trousers">
+        <button class="img-overlay-btn3">Shorts</button>
+    </div>
+    <div class="col-4 position-relative" >
+        <img class="img-fluid" style="height: 100%; object-fit:cover" src="assets/Cat-4.jpg" alt="Trousers">
+        <button class="img-overlay-btn">Tracksuits</button>
+    </div>
+
+  </section> -->
+    
   </div>
 
 
@@ -139,25 +159,25 @@
             health, resistance training can help you get there.</i></p>
   </div>
 
-  <section class="row products">
-      <div class="col-xl-3 col-lg-4 col-md-6 col-6 product-box">
+  <section class="row products-1">
+      <div class="col-xl-3 col-lg-4 col-md-6 col-6 product-box-1">
         <div class="images"><img src="assets/Cat-1.jpg" alt=""></div>
         <h6><strong>Black 3-Stripe DriFit Tee</strong></h6>
         <span>Rs. 900</span>
       </div>
 
-      <div class="col-xl-3 col-lg-4 col-md-6 col-6 product-box">
+      <div class="col-xl-3 col-lg-4 col-md-6 col-6 product-box-1">
         <div class="images"><img src="assets/Cat-2.jpg" alt=""></div>
         <h6><strong>3-Stripe DriFit Trouser</strong></h6>
         <span>Rs. 1,600</span>
       </div>
 
-      <div class="col-xl-3 col-lg-4 col-md-6 col-6 product-box">
+      <div class="col-xl-3 col-lg-4 col-md-6 col-6 product-box-1">
         <div class="images"><img src="assets/Cat-3.jpg" alt=""></div>
         <h6><strong>Adidas Polyster Short</strong></h6>
         <span>Rs. 2,000</span>
       </div>
-      <div class="col-xl-3 col-lg-4 col-md-6 col-6 product-box">
+      <div class="col-xl-3 col-lg-4 col-md-6 col-6 product-box-1">
         <div class="images"><img src="assets/Cat-4.jpg" alt=""></div>
         <h6><strong>Half-Stripes Drifit Tracksuit</strong></h6>
         <span>Rs. 2,300</span>
