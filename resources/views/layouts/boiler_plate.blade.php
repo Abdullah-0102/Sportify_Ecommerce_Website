@@ -12,6 +12,7 @@
   <link rel="icon" href="{{asset('assets/favicon.png')}}">
   <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
   @yield('css')
+  <script src="{{ asset('js/cart.js') }}" defer></script>
   <script src="{{ asset('js/indexcode.js') }}" defer></script>
   <title>Sportify Wear</title>
 </head>
@@ -30,14 +31,161 @@
       <a href="#" class="navbar-text" id="hidden-search"><i class="fa-solid fa-magnifying-glass fa-xl icon color" id="hide-search-icon"></i></a>
       <a href="#" class="navbar-text" id="user"><i class="fa-regular fa-user fa-xl icon color"></i></a>
       <a href="#" class="navbar-text" id="heart"><i class="fa-regular fa-heart fa-xl icon color"></i></a>
-      <a href="#" class="navbar-text" id="open-cart-sidebar"><i class="fa-solid fa-cart-shopping fa-xl icon color"></i></a>
+      <span href="#" class="navbar-text" id="open-cart-sidebar"><i class="fa-solid fa-cart-shopping fa-xl icon color"></i></span>
     </div>
 
-    <!-- <section id="cart-sidebar">
-      <div class="close-sidebar mb-2" id="close-cart-sidebar">
+    <section class="cart-sidebar p-3">
+      <div class="close-cart-sidebar mb-2" id="close-cart-sidebar">
         <i class="fa-solid fa-xmark"></i>
       </div>
-    </section> -->
+      <!-- Cart Heading -->
+      <div class="row">
+        <div class="col-10">
+          <strong>SHOPPING CART</strong>
+          <hr class="product-hr">
+        </div>
+      </div>
+
+      <!-- Items Section -->
+      <div class="row h-50" id="cart-items-section">
+        <div class="col">
+
+          @php
+          $cartItems = isset($_COOKIE['cart']) ? json_decode($_COOKIE['cart'], true) : [];
+          @endphp
+
+          @if(count($cartItems) > 0)
+          @foreach($cartItems as $index => $item)
+          <div class="row cart-item-row justify-content-center my-4">
+            <div class="col-5">
+              <img class="cart-img" src="{{ asset('assets/' . $item['img']) }}" alt="Cart Item">
+            </div>
+            <div class="col-6 small-font">
+
+              <div class="row">
+                <div class="col">
+                  {{ $item['name'] }}
+                </div>
+              </div>
+
+              <div class="row gray-color" style="font-size: x-small;">
+                <div class="col">
+                  {{ $item['color'] }} / {{ $item['size'] }}
+                </div>
+              </div>
+
+              <div class="row dark-gray-color" style="font-size: smaller;">
+                <div class="col">
+                  Rs. {{ $item['price'] }}
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-7" style="font-size: smaller;">
+                  Qty : {{ $item['quantity'] }}
+                </div>
+
+                <div class="col">
+                  <i name="{{ $index }}" class="fa-solid fa-trash fa-xl del"></i>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+          @endforeach
+          @else
+          <p>No items in the cart.</p>
+          @endif
+          <!-- item 1 -->
+          <!-- <div class="row cart-item-row justify-content-center my-4">
+            <div class="col-5">
+              <img class="cart-img" src="{{ asset('assets/Cat-1.jpg') }}" alt="">
+            </div>
+            <div class="col-6 small-font">
+
+              <div class="row">
+                <div class="col">
+                  Mens Sports Shirt
+                </div>
+              </div>
+
+              <div class="row gray-color" style="font-size: x-small;">
+                <div class="col">
+                  Black / 2XL
+                </div>
+              </div>
+
+              <div class="row dark-gray-color" style="font-size: smaller;">
+                <div class="col">
+                  Rs. 2400
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-7" style="font-size: smaller;">
+                  Qty : 2
+                </div>
+
+                <div class="col">
+                  <i class="fa-solid fa-trash fa-xl"></i>
+                </div>
+              </div>
+
+
+            </div>
+          </div> -->
+          <!-- item 2 -->
+          <!-- <div class="row cart-item-row justify-content-center my-4">
+            <div class="col-5">
+              <img class="cart-img" src="{{ asset('assets/Cat-1.jpg') }}" alt="">
+            </div>
+            <div class="col-6 small-font">
+
+              <div class="row">
+                <div class="col">
+                  Mens Sports Shirt
+                </div>
+              </div>
+
+              <div class="row gray-color" style="font-size: x-small;">
+                <div class="col">
+                  Black / 2XL
+                </div>
+              </div>
+
+              <div class="row dark-gray-color" style="font-size: smaller;">
+                <div class="col">
+                  Rs. 2400
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-7" style="font-size: smaller;">
+                  Qty : 2
+                </div>
+
+                <div class="col">
+                  <i class="fa-solid fa-trash fa-xl"></i>
+                </div>
+              </div>
+
+
+            </div>
+          </div> -->
+
+        </div>
+
+
+      </div>
+
+      <!-- Checkout Button -->
+      <div class="row my-3">
+        <div class="col d-flex justify-content-center align-items-center">
+          <button type="button" class="btn btn-outline-dark w-75 my-3">Checkout</button>
+        </div>
+      </div>
+    </section>
 
     <div class="collapse navbar-collapse" id="navbar-items">
       <div class="navbar-nav">
@@ -215,6 +363,43 @@
 
   @yield('js')
 
+  <script>
+    document.querySelectorAll(".del").forEach(delElement => {
+      // Add click event listener to each <del> element
+      delElement.addEventListener('click', function() {
+
+        let previousURL = encodeURL(window.location.pathname);
+        alert(previousURL);
+
+        // Retrieve the value of the 'name' attribute
+        let attributeName = this.getAttribute('name');
+        window.location.href = `/delete/${attributeName}/${previousURL}`;
+        alert(window.location.href);
+      });
+    });
+
+
+    function encodeURL(urlString) {
+      let encodedString = urlString.replace(/\//g, ''); // Remove all '/'
+      let positions = [];
+
+      // Store positions of removed '/' in an array
+      urlString.split('').forEach((char, index) => {
+        if (char === '/') {
+          positions.push(index);
+        }
+      });
+
+      return encodedString + '_' + positions.join(','); // Append positions information
+    }
+
+    // let originalURL = "/table/2/subfolder/3";
+    // let encodedURL = encodeURL(originalURL);
+    // console.log(encodedURL); // Output: "table2subfolder3_5,11" (Assuming '/' were at indices 5 and 11)
+
+
+
+  </script>
 </body>
 
 </html>

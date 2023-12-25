@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.container{
+    min-height: 100vh;
+    background: #08071d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.container section{
+    width: 770px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    border-radius: 15px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    flex-wrap: wrap;
+}
+
+.container section h1{
+    color: #fff;
+    font-weight: 500;
+    margin-top: 20px;
+    width: 500px;
+    text-align: center;
+}
+
+.container section input{
+    color: #ddd;
+    width: 200px;
+    height: 40px;
+    padding-left: 10px;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    margin-bottom: 10px;
+    background: none;
+    border-bottom: 2px solid #fff;
+}
+
+.container section input::placeholder{
+    color: #ddd;
+}
+
+.container section #lastName,
+.container section #mobile{
+    margin-left: 20px;
+}
+
+.container section h4{
+    color: #fff;
+    font-weight: 300;
+    width: 600px;
+    font-size: medium;
+    margin-top: 20px;
+}
+
+.container section textarea{
+    background: none;
+    border: none;
+    border-bottom: 2px solid #fff;
+    color: #fff;
+    font-weight: 200;
+    font-size: 15px;
+    padding: 10px;
+    outline: none;
+    min-width: 300px;
+    max-width: 300px;
+    min-height: 50px;
+    max-height: 50px;
+}
+
+textarea::-webkit-scrollbar{
+    width: 1em;
+}
+
+textarea::-webkit-scrollbar-thumb{
+    background-color: rgba(194,194,194,0.713);
+}
+
+textarea::placeholder{
+    color: #ddd;
+}
+
+label[for='product-category']{
+    color: #ddd;
+}
+
+/* Style for the select box */
+#product-category {
+    background-color: transparent; /* Make the background transparent */
+    color: white; /* Set text color to white */
+    padding: 8px; /* Add padding */
+    border: 1px solid white; /* Add border for visibility */
+    width: 200px; /* Set desired width */
+}
+
+/* Style for the options */
+#product-category option {
+    background-color: #222222; /* Set background color for options */
+    color: white; /* Set text color for options */
+}
+
+/* To remove default arrow icon in some browsers */
+#product-category::-ms-expand {
+    display: none;
+}
