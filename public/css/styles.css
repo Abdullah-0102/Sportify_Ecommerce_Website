@@ -268,11 +268,20 @@ input[type="range"]::-moz-range-thumb{
 .product-box{
     position: relative;
     overflow: hidden;
+}
 
+.anchor-styling{
+    color: black;
+    text-decoration: none;
+}
+.anchor-styling:hover{
+    color: grey;
+    text-decoration: underline;
 }
 
 .product-image{
     height: 80%;
+    margin-bottom: 10px;
 }
 .product-image img{
     text-align: center;

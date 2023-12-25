@@ -1,5 +1,16 @@
 @extends('layouts.boiler_plate')
+@section('js')
+<script src="{{ asset('js/indexcode.js') }}" defer></script>
+@endsection
+
 @section('content')
+
+
+
+
+
+
+
 <!-- Carousel Section  -->
 <section id="carousel-with-indicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
