@@ -2,7 +2,8 @@
 @section('content')
 <!-- Form Section -->
 <div class="form-container">
-        <form method="POST" action="contactUs.php" class="m-3 p-3" style="width: 40%;">
+        <form method="post" action="{{ route('insertClientQuery') }}" class="m-3 p-3" style="width: 40%;">
+            @csrf
             <fieldset>
                 <legend>
                     <h3>DROP US A LINE</h3>

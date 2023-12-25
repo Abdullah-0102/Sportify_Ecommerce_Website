@@ -29,7 +29,7 @@
             background-color: #343a40;
             color: white;
             padding: 20px;
-            height: 120vh;
+            height: 130vh;
         }
 
         .admin-panel h3 {
@@ -86,17 +86,18 @@
         <div class="col-md-3 admin-panel">
             <h3 id="dashboardLink">DASHBOARD</h3>
             <ul>
-              <li><a href="#">Add Product</a></li>
+              <li><a href="{{ route('addProduct') }}">Add Product</a></li>
               <li><a href="{{ route('delprods') }}">Delete Product</a></li>
               <li><a href="#">Edit Product</a></li>
               <li><a href="#">View inventory</a></li>
               <li><a href="#">Client Orders</a></li>
+              <li><a href="{{ route('client_queries') }}">View Complaints</a></li>
             </ul>
         </div>
 
         <!-- Product Container on the right -->
         <div class="col-md-9">
-          <section class="row prods-container">
+          <section class="row prods-container" style="margin-top: 30px;">
             @foreach ($products as $product)
               <div class="col-lg-4 col-md-6 col-6 product-box">
                 <a href="productDetail/{{ $product->id }}" class="anchor-styling">
