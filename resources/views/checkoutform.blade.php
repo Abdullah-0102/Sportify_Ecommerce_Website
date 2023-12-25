@@ -48,7 +48,7 @@
 
         <div class="col-75">
             <div class="container">
-                <form id="checkoutForm" method="get" action="{{ route('sendMail') }}">
+                <form id="checkoutForm" method="post" action="{{ route('sendMail') }}">
                     @csrf
                     <div class="row addr-bill-cont">
                         <div class="col-50">

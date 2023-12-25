@@ -9,19 +9,19 @@
 
     <!-- Font Awesome Library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+
 
 
     <link rel="icon" href="{{asset('assets/favicon.png')}}">
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
 
     <title>Admin Dashboard</title>
-    <link href="{{ asset('css/deleteProds.css') }}" rel="stylesheet">
     <style>
         .admin-panel {
             background-color: #343a40;
             color: white;
             padding: 20px;
-            height: 100vh;
+            height: 120vh;
         }
 
         .admin-panel h3 {
@@ -72,21 +72,10 @@
         }
     </style>
 
-
-    @if (session('deletionsuccess'))
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var successModal = new bootstrap.Modal(document.getElementById('successModal'));
-            successModal.show();
-        });
-    </script>
-    @endif
-
-
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navigation bg-dark">
+    <nav class="navbar navbar-expand-lg navigation" style="background-color: black; height: 150px;">
         <!-- Logo on the left -->
         <a class="navbar-brand d-flex align-self-center pl-2 mx-2 mr-auto" href="{{ asset('index') }}">
             <img class="logo" src="{{ asset('assets/white-logo.png') }}" alt="Sportify Wear" style="width: 150px; height: auto;">
@@ -97,7 +86,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3 admin-panel">
-                <h3>DASHBOARD</h3>
+                <h3 id="dashboardLink">DASHBOARD</h3>
                 <ul>
                     <li><a href="#">Add Product</a></li>
                     <li><a href="{{ route('delprods') }}">Delete Product</a></li>
@@ -117,29 +106,12 @@
     </div>
 
 
-    <!-- Bootstrap deletion success modal -->
-  <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header bg-success text-white">
-          <h5 class="modal-title" id="successModalLabel">Product Deleted</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body text-center">
-          <div class="d-flex align-items-center justify-content-center rounded-circle bg-success text-white p-3 mb-3" style="font-size: 1.5em; width: 50px; height: 50px; margin: 0 auto;">
-            <span style="font-size: 1.5em;">&#10004;</span>
-          </div>
-          <p style="font-size: 16px;"><strong>The product has been successfully deleted.</strong></p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  
+  <script>
+    document.getElementById('dashboardLink').addEventListener('click', function() {
+        window.location.href = "{{ route('dashboard') }}";
+    });
+  </script>
+
 </body>
 
 </html>

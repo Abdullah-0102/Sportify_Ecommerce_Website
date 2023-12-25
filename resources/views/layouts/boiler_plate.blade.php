@@ -163,7 +163,7 @@
     <div class="footer-top px-2 ">
 
       <section class="p-1 footer-box">
-        <a href="#"><img src="{{ asset('assets/white-logo.png') }}" alt="Sportify Wear"></a>
+        <a href="#"><img src="{{ asset('assets/white-logo.png') }}" alt="Sportify Wear" style="height: 150px; width: 150px;"></a>
         <p>
           <i class="fa-solid fa-location-dot"></i>
           <span class="m-auto">Plot no D1/3 Sector 21 K.I.A Karachi</span>
@@ -261,29 +261,6 @@
     </div>
   </div>
 
-
-  <!-- Bootstrap deletion success modal -->
-  <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header bg-success text-white">
-          <h5 class="modal-title" id="successModalLabel">Product Deleted</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body text-center">
-          <div class="d-flex align-items-center justify-content-center rounded-circle bg-success text-white p-3 mb-3" style="font-size: 1.5em; width: 50px; height: 50px; margin: 0 auto;">
-            <span style="font-size: 1.5em;">&#10004;</span>
-          </div>
-          <p style="font-size: 16px;"><strong>The product has been successfully deleted.</strong></p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
 </body>
 
