@@ -9,20 +9,49 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
+  <!-- Font Awesome Library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
   <link rel="icon" href="{{asset('assets/favicon.png')}}">
   <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+  
   @yield('css')
-  <script src="{{ asset('js/indexcode.js') }}" defer></script>
+  @yield('js')
+  <!-- <script src="{{ asset('js/indexcode.js') }}" defer></script> -->
+
+
+  @if (session('ordersuccess'))
+  <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          var orderConfirmationModal = new bootstrap.Modal(document.getElementById('orderConfirmationModal'));
+          orderConfirmationModal.show();
+      });
+  </script>
+  @endif
+
+  @if (session('deletionsuccess'))
+  <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          var successModal = new bootstrap.Modal(document.getElementById('successModal'));
+          successModal.show();
+      });
+  </script>
+  @endif
+
+
+
   <title>Sportify Wear</title>
 </head>
 
 <body>
+
   <!-- Navbar Design-->
   <nav class="navbar navbar-expand-lg navigation bg-white sticky-top">
     <button class="navbar-toggler text-left" type="button" data-toggle="collapse" data-target="#navbar-items">
       <span><i class="fa-solid fa-bars fa-xl"></i></span>
     </button>
-    <a class="navbar-brand d-flex align-self-center" href="#"><img class="logo" src="{{ asset('assets/logo.png') }}" alt="Sportify Wear"></a>
+    <a class="navbar-brand d-flex align-self-center" href="{{ route('index') }}"><img class="logo" src="{{ asset('assets/logo.png') }}" alt="Sportify Wear"></a>
 
 
 
@@ -214,6 +243,54 @@
 
 
   @yield('js')
+
+
+  <!-- Bootstrap Modal for order confirmation -->
+  <div class="modal fade" id="orderConfirmationModal" tabindex="-1" role="dialog" aria-labelledby="orderConfirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="orderConfirmationModalLabel">Order Confirmation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                <div class="d-flex align-items-center justify-content-center rounded-circle bg-success text-white p-3 mb-3" style="font-size: 1.5em; width: 50px; height: 50px; margin: 0 auto;">
+                    <span style="font-size: 1.5em;">&#10004;</span>
+                </div>
+                <p style="font-size: 16px;"><strong>Your order has been confirmed.</strong><br> An order confirmation mail has been sent to your email address.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+  <!-- Bootstrap deletion success modal -->
+  <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title" id="successModalLabel">Product Deleted</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-center">
+          <div class="d-flex align-items-center justify-content-center rounded-circle bg-success text-white p-3 mb-3" style="font-size: 1.5em; width: 50px; height: 50px; margin: 0 auto;">
+            <span style="font-size: 1.5em;">&#10004;</span>
+          </div>
+          <p style="font-size: 16px;"><strong>The product has been successfully deleted.</strong></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </body>
 

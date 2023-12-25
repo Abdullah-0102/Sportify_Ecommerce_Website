@@ -1,7 +1,7 @@
 
 body {
     font-family: Arial;
-    font-size: 17px;
+    font-size: 13px;
     padding: 8px;
 }
 
@@ -9,7 +9,7 @@ body {
     box-sizing: border-box;
 }
 
-h3{
+h4{
     font-weight: bold;
     margin-bottom: 40px;
     margin-top: 30px;
@@ -30,8 +30,8 @@ h3{
     -ms-flex-wrap: wrap;
     /* IE10 */
     flex-wrap: wrap;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 7%;
+    margin-right: 7%;
 
 }
 
@@ -177,6 +177,14 @@ span.price {
 .error-message{
     color: red;
     font-size: 12px;
+}
+
+.error{
+    border: 1px solid red;
+}
+
+.is-invalid{
+    border: 1px solid red;
 }
 
 

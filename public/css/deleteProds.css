@@ -1,0 +1,28 @@
+button {
+    display: flex;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px; 
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Remove underline on hover */
+  button:hover {
+    text-decoration: none;
+    color: whitesmoke;
+  }
+  
+  /* Change colors on hover */
+  button:hover {
+    background-color: gray;
+    color: black;
+  }
+
+  .bg-black{
+    background-color: black;
+  }
+  

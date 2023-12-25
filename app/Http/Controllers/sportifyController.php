@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Redirect;
+use App\Mail\OrderConfirmation;
+
+
 
 
 class sportifyController extends Controller
@@ -18,6 +24,25 @@ class sportifyController extends Controller
     public function products(Request $request){
         $products = DB::select("select * from product"); 
         return view("products",['products' => $products]);
+    }
+
+    public function deleteProds(Request $request){
+        $products = DB::select("select * from product"); 
+        return view("Admin.adminDelProds", compact('products'));
+    }
+
+    public function destroy($id){
+        DB::beginTransaction();
+
+        $product = DB::table('product')->where('id', $id)->first();
+        $inventoryId = $product->inventory_id;
+        DB::table('product_inventory')->where('id', $inventoryId)->delete();
+        DB::table('product_attribute')->where('p_id', $id)->delete();
+        
+        // DB::unprepared("delete from product where id = '$id'");
+        DB::table('product')->where('id', $id)->delete();
+
+        return redirect('/delprods')->with('deletionsuccess', 'Record deleted successfully');
     }
     
     // public function productDetail($id){
@@ -72,4 +97,32 @@ class sportifyController extends Controller
     public function preorder(){
         return view("preorderpage");
     }
+
+
+    public function submit(Request $request)
+    {
+        
+
+        // Fetch the user-entered email
+        $userEmail = $request->input('email');
+        Log::info('User Email: ' . $userEmail);
+
+        // Send the order confirmation email to the user
+        $mailData = [
+            'title' => 'ORDER CONFIRMED!',
+            // 'body' => 'This mail is for testing purpose'
+        ];
+
+        Mail::to($userEmail)->send(new OrderConfirmation($mailData));
+        return Redirect::route('index')->with('ordersuccess', 'Email sent successfully!');
+
+        // Redirect back or to a success page
+        // echo $userEmail;
+        // return Redirect::to('/')->with('success', 'Email sent successfully!');
+    }
+
+    public function admindashboard(){
+        return view('Admin.admindashboard');
+    }
+
 }

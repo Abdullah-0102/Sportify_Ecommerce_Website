@@ -1,0 +1,16 @@
+.containerr{
+    margin-bottom: 20%;
+    margin-top: 60px;
+}
+.top-categoriess {
+    text-align: center ;
+    align-items: center;
+    justify-content: center;
+}
+.top-categoriess p{
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+}
+.top-categoriess h2{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}

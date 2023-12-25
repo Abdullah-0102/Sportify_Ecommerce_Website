@@ -1,11 +1,14 @@
 @extends('layouts.boiler_plate')
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/preorderpage.css') }}">
+@endsection
+
 @section('content')
 <section>
-    <div class="container">
-        <div class="top-categories">
+    <div class="containerr">
+        <div class="top-categoriess">
           <h2>PREORDERS SECTION</h2>
-          <p><i>All of our products are made out of premium fabrics and are designed to get you through the toughest of work out sessions.
-            In addition, our efficient quality control department cross checks each order before its shipped from our warehouses.</i></p>
+          <p><i>Currently, there are no products available for Pre-Booking.</i></p>
         </div>
     </div>
 </section>
