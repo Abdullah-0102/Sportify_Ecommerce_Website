@@ -332,4 +332,33 @@ class sportifyController extends Controller
     {
         return view('Admin.admindashboard');
     }
+
+
+    public function storeClientQuery(Request $request) {
+        $name = $request->input('name');
+        $email = $request->input('email');
+        $phone = $request->input('phone');
+        $message = $request->input('message');
+
+        DB::unprepared("Insert into client_queries (Name, Email, Contact, Message) values ('$name','$email','$phone','$message')");
+        return Redirect::route('index')->with('clientquerysuccess', 'Data Fed in DB successfully!');
+    }
+
+
+    public function showClientQueries() {
+        $clientQueries = DB::table('client_queries')->get();
+    
+        return view('Admin.viewComplaints', ['clientQueries' => $clientQueries]);
+    }
+    
+
+    public function destroyClientQuery($id){
+        DB::beginTransaction();
+
+        DB::table('client_queries')->where('id', $id)->delete();
+        return redirect('/client_queries')->with('deletionsuccess', 'Complaint removed successfully!');
+    }
+    
+
+
 }

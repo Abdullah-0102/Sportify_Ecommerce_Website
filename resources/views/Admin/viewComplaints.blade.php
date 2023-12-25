@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
     <!-- Font Awesome Library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -84,6 +85,13 @@
 
     <!-- Admin Panel on the left -->
     <div class="container-fluid">
+
+        @if(session('deletionsuccess'))
+        <div class="alert alert-success">
+            {{ session('deletionsuccess') }}
+        </div>
+        @endif
+
         <div class="row">
             <div class="col-md-3 admin-panel">
                 <h3 id="dashboardLink">DASHBOARD</h3>
@@ -98,20 +106,56 @@
             </div>
 
             <!-- Centered Image and Text on the right -->
-            <div class="col-md-9 centered-content">
-                <div class="page-title">SPORTIFY WEAR</div>
-                <div class="page-subtitle">ADMIN PANEL DASHBOARD</div>
-                <img src="{{ asset('assets/grey-logo.png') }}" alt="Sportify Wear Image">
+            <div class="col-md-9">
+                <div class="container">
+                    <h2 style="text-align: center;">Client Queries</h2>
+                    <table class="table mt-4">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Contact</th>
+                                <th scope="col">Message</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if($clientQueries->isEmpty())
+                            <tr>
+                                <td colspan="5" class="text-center">NO COMPLAINTS TO DISPLAY.</td>
+                            </tr>
+                            @else
+                            @foreach($clientQueries as $index => $query)
+                            <tr>
+                                <th scope="row">{{ $query->id }}</th>
+                                <td>{{ $query->Name }}</td>
+                                <td>{{ $query->Email }}</td>
+                                <td>{{ $query->Contact }}</td>
+                                <td>{{ $query->Message }}</td>
+                                <td>
+                                    <button class="btn btn-danger" onclick="noteRow({{ $query->id }})">NOTED</button>
+                                </td>
+                            </tr>
+                            @endforeach
+                            @endif
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
 
 
-  <script>
-    document.getElementById('dashboardLink').addEventListener('click', function() {
-        window.location.href = "{{ route('dashboard') }}";
-    });
-  </script>
+    <script>
+        document.getElementById('dashboardLink').addEventListener('click', function() {
+            window.location.href = "{{ route('dashboard') }}";
+        });
+        
+        function noteRow($id) {
+            // var url = '/deleteClientQuery/' + clientQueryId;
+            window.location.href = "/deleteClientQuery/" + $id;
+        }
+    </script>
 
 </body>
 

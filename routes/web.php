@@ -45,6 +45,12 @@ Route::get('/test', function () {
 Route::get('delete/{index}/{previousURL}', 'App\Http\Controllers\sportifyController@removeItem');
 Route::get('/admin', 'App\Http\Controllers\sportifyController@loginPage');
 
-Route::get('/addProduct', 'App\Http\Controllers\sportifyController@addProductPage');
+Route::get('/addProduct', 'App\Http\Controllers\sportifyController@addProductPage')->name('addProduct');
 
 Route::post('/insert', 'App\Http\Controllers\sportifyController@insert');
+
+Route::post('/insertClientQuery', 'App\Http\Controllers\sportifyController@storeClientQuery')->name('insertClientQuery');
+Route::get('/client_queries', 'App\Http\Controllers\sportifyController@showClientQueries')->name('client_queries');
+Route::get('/deleteClientQuery/{id}', 'App\Http\Controllers\sportifyController@destroyClientQuery');
+
+
