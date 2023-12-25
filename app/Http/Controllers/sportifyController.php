@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use App\Mail\OrderConfirmation;
 use App\Models\cart_table;
+use App\Models\product;
 
 
 
@@ -32,6 +33,13 @@ class sportifyController extends Controller
         return view("products", ['products' => $products]);
     }
 
+    public function categoryProducts($catId){
+
+        $products = Product::where('category_id', $catId)->get();
+        return view("products", ['products' => $products]);
+
+    }
+
     public function deleteProds(Request $request)
     {
         $products = DB::select("select * from product");
@@ -52,16 +60,6 @@ class sportifyController extends Controller
 
         return redirect('/delprods')->with('deletionsuccess', 'Record deleted successfully');
     }
-
-    // public function productDetail($id){
-    //     // Cast $id to an integer
-    //     $id = (int)$id;
-
-    //     $product = DB::select("select * from product where id = ?", [$id]);
-
-    //     // return $product;
-    //     return view("productDetail", ["product" => $product]);
-    // }
 
     public function productDetail($id)
     {
