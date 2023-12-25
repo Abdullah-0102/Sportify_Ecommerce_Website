@@ -34,7 +34,7 @@ Route::get('/delete/{id}', 'App\Http\Controllers\sportifyController@destroy');
 
 // Route::post('/checkout-submit', [sportifyController::class, 'submit'])->name('checkout.submit');
 
-Route::get('/sendMail',[sportifyController::class,'submit'])->name("sendMail");
+Route::post('/sendMail',[sportifyController::class,'submit'])->name("sendMail");
 
 // Route::get('/add-to-cart/{encodedSend}', 'App\Http\Controllers\sportifyController@addItem')->name('don');
 Route::get('add-to-cart/{id}/{quantity}/{color}/{size}', 'App\Http\Controllers\sportifyController@addItem');

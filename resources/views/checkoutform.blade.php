@@ -41,7 +41,7 @@
 
         <div class="col-75">
             <div class="container">
-                <form id="checkoutForm" method="get" action="{{ route('sendMail') }}">
+                <form id="checkoutForm" method="post" action="{{ route('sendMail') }}">
                     @csrf
                     <div class="row addr-bill-cont">
                         <div class="col-50">
@@ -78,7 +78,7 @@
                             <div class="row">
                                 <div class="col-50">
                                     <label for="zip">Zip</label>
-                                    <input type="text" id="zip" name="zip" placeholder="45230">
+                                    <input type="text" id="zip" name="zip" placeholder="00000">
                                 </div>
                             </div>
                             <label>
@@ -183,10 +183,17 @@
                     @if(count($cartItems) > 0)
                     <?php $sum = 0; ?> <!-- Initialize sum variable outside the loop -->
                     @foreach($cartItems as $index => $item)
-                    <?php $sum = $sum + $item['price']; ?> <!-- Calculate sum inside the loop -->
-                    <p><a href="#">{{ $item['name'] }}</a> <span class="price">Rs. {{ $item['price'] }}</span></p>
+                    <?php $sum = $sum + $item['price'] * $item['quantity']; ?> <!-- Calculate sum inside the loop -->
+                    <div class="row">
+                        <div class="col-7">
+                            {{ $item['name'] }}
+                        </div>
+                        <div class="col-5">
+                            <span class="price">Rs. {{ $item['price'] }} ({{ $item['quantity'] }}/{{ $item['size'] }})</span>
+                        </div>
+                    </div>
                     @endforeach
-                    
+
                     <hr>
                     <p>Total <span class="price" style="color:black"><b>Rs. {{ $sum }}</b></span></p> <!-- Display total outside the loop -->
                     @else
