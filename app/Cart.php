@@ -18,7 +18,7 @@ class Cart {
     }
 
     public function setCookie($data) {
-        setcookie($this->cookieName, json_encode($data), time() + (3600), '/'); // Cookie lasts for 1 day
+        setcookie($this->cookieName, json_encode($data), time() + (86400*30), '/'); // Cookie lasts for 30 days
     }
 
     public function addItem($item) {

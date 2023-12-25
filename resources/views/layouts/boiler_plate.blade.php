@@ -204,7 +204,7 @@
       <!-- Checkout Button -->
       <div class="row my-3">
         <div class="col d-flex justify-content-center align-items-center">
-          <button type="button" class="btn btn-outline-dark w-75 my-3">Checkout</button>
+          <button type="button" class="btn btn-outline-dark w-75 my-3" id="checkout-cart-btn">Checkout</button>
         </div>
       </div>
     </section>
@@ -434,17 +434,22 @@
   </div>
 
   <script>
+    document.addEventListener("DOMContentLoaded",()=>{
+      document.querySelector("#checkout-cart-btn").addEventListener('click', ()=>{
+        window.location.href = "/checkout";
+      });
+    });
+
+
     document.querySelectorAll(".del").forEach(delElement => {
       // Add click event listener to each <del> element
       delElement.addEventListener('click', function() {
 
         let previousURL = encodeURL(window.location.pathname);
-        alert(previousURL);
 
         // Retrieve the value of the 'name' attribute
         let attributeName = this.getAttribute('name');
         window.location.href = `/delete/${attributeName}/${previousURL}`;
-        alert(window.location.href);
       });
     });
 

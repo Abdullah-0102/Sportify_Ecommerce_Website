@@ -19,13 +19,6 @@
     <link rel="icon" href="assets/favicon.png">
     <link href="{{ asset('css/checkoutform.css') }}" rel="stylesheet">
 
-    <!-- <script> -->
-        <!-- function navigateToSendMail() { -->
-            <!-- // window.location.href = "{{ route('sendMail') }}"; -->
-            <!-- window.location.href = "{{ route('index') }}"; -->
-        <!-- } -->
-    <!-- </script> -->
-
 
     <title>Checkout Page</title>
 </head>
@@ -57,12 +50,12 @@
                                 <div class="col-md-6 col-12">
                                     <label for="fname"><i class="fa fa-user"></i> First Name</label>
                                     <div class="error-message" id="fname-error"></div>
-                                    <input type="text" id="fname" name="fname" placeholder="Abdullah" required>
+                                    <input type="text" id="fname" name="fname" placeholder="First Name" required>
                                 </div>
                                 <div class="col-md-6 col-12">
                                     <label for="lname"><i class="fa fa-user"></i> Last Name</label>
                                     <div class="error-message" id="lname-error"></div>
-                                    <input type="text" id="lname" name="lname" placeholder="Imran" required>
+                                    <input type="text" id="lname" name="lname" placeholder="Last Name" required>
                                 </div>
                             </div>
                             <label for="mobileNumber"><i class="fas fa-phone"></i> Contact Number</label>
@@ -122,11 +115,11 @@
                                 <input type="checkbox" id="billingCheckbox" checked="checked" class="mb-3" data-bs-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"> Billing address same as shipping
                             </label> -->
 
-                            
-                            
-                            
+
+
+
                             <!-- This div is supposed to appear if the billing address is different than shipping address -->
-                            
+
                             <!-- <div class="collapse billing-adr-body" id="collapseExample">
                                 <div class="card card-body ">
                                     <h4>Billing Address</h4>
@@ -168,11 +161,15 @@
 
 
 
-                </div>
+            </div>
             </form>
         </div>
 
         <div class="col-25">
+            @php
+            $cartItems = isset($_COOKIE['cart']) ? json_decode($_COOKIE['cart'], true) : [];
+            $sum = 0;
+            @endphp
             <div class="container">
                 <!-- Button to toggle the collapse on smaller screens -->
                 <button class="btn btn-primary d-sm-none" type="button" data-bs-toggle="collapse" data-bs-target="#cartCollapse" aria-expanded="false" aria-controls="cartCollapse">
@@ -181,20 +178,26 @@
 
                 <!-- Collapsible content -->
                 <div class="collapse d-sm-block" id="cartCollapse">
-                    <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart fa-xs"></i> <b>4</b></span></h4>
+                    <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart fa-xs"></i> <b>{{count($cartItems)}}</b></span></h4>
                     <hr>
-                    <p><a href="#">Spandex DriFit Tee </a> <span class="price">Rs. 1,500</span></p>
-                    <p><a href="#">Vision Graphic Hoodie</a> <span class="price">Rs. 3,000</span></p>
-                    <p><a href="#">Black Chaos Hoodie</a> <span class="price">Rs. 3,200</span></p>
-                    <p><a href="#">Halcyon Graphic Tee</a> <span class="price">Rs. 1,600</span></p>
+                    @if(count($cartItems) > 0)
+                    <?php $sum = 0; ?> <!-- Initialize sum variable outside the loop -->
+                    @foreach($cartItems as $index => $item)
+                    <?php $sum = $sum + $item['price']; ?> <!-- Calculate sum inside the loop -->
+                    <p><a href="#">{{ $item['name'] }}</a> <span class="price">Rs. {{ $item['price'] }}</span></p>
+                    @endforeach
+                    
                     <hr>
-                    <p>Total <span class="price" style="color:black"><b>Rs. 9,300</b></span></p>
+                    <p>Total <span class="price" style="color:black"><b>Rs. {{ $sum }}</b></span></p> <!-- Display total outside the loop -->
+                    @else
+                    <p>No items in the cart.</p>
+                    @endif
                 </div>
             </div>
         </div>
 
 
-        
+
 
 
 
@@ -230,17 +233,17 @@
 
                 for (var i = 0; i < formElements.length; i++) {
                     var element = formElements[i];
-                    
+
                     // Skip elements without validation
                     if (!element.hasAttribute('required')) {
                         continue;
                     }
-                    
-                    
+
+
                     if (element.type != 'checkbox' && element.value.trim() == '') {
                         isValid = false;
                         console.log('Empty');
-                        
+
                         // Highlight the empty field
                         element.classList.add('is-invalid');
 
@@ -249,46 +252,46 @@
                             if (!element.value.trim()) {
                                 document.getElementById('fname-error').innerHTML = 'This field is required';
                                 element.focus();
-                            } 
+                            }
                         }
                         if (element.id === 'lname') {
                             if (!element.value.trim()) {
                                 document.getElementById('lname-error').innerHTML = 'This field is required';
                                 element.focus();
-                            } 
+                            }
                         }
                         if (element.id === 'email') {
                             if (!element.value.trim()) {
                                 document.getElementById('email-error').innerHTML = 'This field is required';
                                 element.focus();
-                            } 
+                            }
                         }
                         if (element.id === 'mobileNumber') {
                             if (!element.value.trim()) {
                                 document.getElementById('phonenum-error').innerHTML = 'This field is required';
                                 element.focus();
-                            } 
+                            }
                         }
                         if (element.id === 'adr') {
                             if (!element.value.trim()) {
                                 document.getElementById('address-error').innerHTML = 'This field is required';
                                 element.focus();
-                            } 
+                            }
                         }
                         if (element.id === 'city') {
                             if (!element.value.trim()) {
                                 document.getElementById('city-error').innerHTML = 'This field is required';
                                 element.focus();
-                            } 
+                            }
                         }
                     }
 
 
                     // Validations to check all the input fields if value has been entered correctly
-                    if (element.type != 'checkbox' && element.value.trim() != '' && element.id == 'mobileNumber'){
+                    if (element.type != 'checkbox' && element.value.trim() != '' && element.id == 'mobileNumber') {
                         var mobileNumberInput = document.getElementById('mobileNumber');
                         var validationMessage = document.getElementById('phonenum-error');
-                                                
+
                         if (!regex.test(mobileNumberInput.value)) {
                             validationMessage.innerHTML = 'Invalid mobile number. Please enter in the format 03xx-xxxxxxx.';
                             mobileNumberInput.value = '';
@@ -299,10 +302,10 @@
                         }
                     }
 
-                    if (element.type != 'checkbox' && element.value.trim() != '' && element.id == 'fname'){
+                    if (element.type != 'checkbox' && element.value.trim() != '' && element.id == 'fname') {
                         var fnameInput = document.getElementById('fname');
                         var validationMessage = document.getElementById('fname-error');
-                        
+
                         if (!nameRegex.test(fnameInput.value)) {
                             validationMessage.innerHTML = 'Invalid First Name!';
                             fnameInput.value = '';
@@ -313,10 +316,10 @@
                         }
                     }
 
-                    if (element.type != 'checkbox' && element.value.trim() != '' && element.id == 'lname'){
+                    if (element.type != 'checkbox' && element.value.trim() != '' && element.id == 'lname') {
                         var lnameInput = document.getElementById('lname');
                         var validationMessage = document.getElementById('lname-error');
-                                                
+
                         if (!nameRegex.test(lnameInput.value)) {
                             validationMessage.innerHTML = 'Invalid Last Name!';
                             lnameInput.value = '';
@@ -369,17 +372,17 @@
 
                 var isValid = validateForm();
 
-                if (isValid){
+                if (isValid) {
                     console.log('Form Entries are Valid,  you will be redirected to home page.');
                     // var orderConfirmationModal = new bootstrap.Modal(document.getElementById('orderConfirmationModal'));
                     // orderConfirmationModal.show();
                     // document.getElementById('checkoutForm').reset();
                 }
-                
-                
-                
-                
-                
+
+
+
+
+
                 // window.location.href = "{{ route('index') }}";
 
                 // setTimeout(function() {
@@ -391,8 +394,8 @@
 
 
             });
-                
-            
+
+
 
 
 
@@ -433,7 +436,6 @@
 
     <script>
         // Add this code after the redirect code
-        
     </script>
 
 
