@@ -25,7 +25,7 @@ Route::get('/preorder', 'App\Http\Controllers\sportifyController@preorder')->nam
 Route::get('/checkout-submit', 'App\Http\Controllers\sportifyController@submit')->name('checkout.submit');
 
 
-Route::get('/dashboard', 'App\Http\Controllers\sportifyController@adminDashboard')->name('delprods');
+Route::get('/dashboard', 'App\Http\Controllers\sportifyController@adminDashboard')->name('dashboard');
 Route::get('/delprods', 'App\Http\Controllers\sportifyController@deleteProds')->name('delprods');
 Route::get('/delete/{id}', 'App\Http\Controllers\sportifyController@destroy');
 
