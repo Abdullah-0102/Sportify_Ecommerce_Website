@@ -177,7 +177,7 @@
   @foreach ($products as $product)
     <div class="col-lg-4 col-md-6 col-6 product-box">
       <a href="productDetail/{{ $product->id }}" class="anchor-styling">
-        <div class="product-image"><img src="assets/{{ $product->img1 }}" alt="{{ $product->name }}"></div>
+        <div class="product-image"><img src="{{ asset('assets/' . $product->img1) }}" alt="{{ $product->name }}"></div>
         <h6><strong>{{ $product->name }}</strong></h6>
         <span>Rs. {{ $product->price }}</span>
       </div>
