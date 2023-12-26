@@ -86,9 +86,9 @@
     <!-- Admin Panel on the left -->
     <div class="container-fluid">
 
-        @if(session('deletionsuccess'))
+        @if(session('fulfilledsuccess'))
         <div class="alert alert-success">
-            {{ session('deletionsuccess') }}
+            {{ session('fulfilledsuccess') }}
         </div>
         @endif
 
@@ -105,41 +105,59 @@
                 </ul>
             </div>
 
-            <!-- Centered Image and Text on the right -->
             <div class="col-md-9">
-                <div class="container">
-                    <h2 style="text-align: center;">Client Queries</h2>
-                    <table class="table mt-4">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Contact</th>
-                                <th scope="col">Message</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @if($clientQueries->isEmpty())
-                            <tr>
-                                <td colspan="5" class="text-center">NO COMPLAINTS TO DISPLAY.</td>
-                            </tr>
-                            @else
-                            @foreach($clientQueries as $index => $query)
-                            <tr>
-                                <th scope="row">{{ $query->id }}</th>
-                                <td>{{ $query->Name }}</td>
-                                <td>{{ $query->Email }}</td>
-                                <td>{{ $query->Contact }}</td>
-                                <td>{{ $query->Message }}</td>
-                                <td>
-                                    <button class="btn btn-danger" onclick="noteRow({{ $query->id }})">NOTED</button>
-                                </td>
-                            </tr>
-                            @endforeach
-                            @endif
-                        </tbody>
-                    </table>
+                <div class="container mt-5">
+                    <h2>Order Details</h2>
+
+                    @if(session('ordersuccess'))
+                    <div class="alert alert-success">
+                        {{ session('ordersuccess') }}
+                    </div>
+                    @endif
+
+
+                    @if($clientOrders->isEmpty())
+                    <div class="d-flex justify-content-center">NO ORDERS TO DISPLAY.</div>
+                    @else
+                    <!-- Display Client Information -->
+                    @foreach($clientOrders as $clientOrder)
+                    <div class="card mt-4">
+                        <div class="card-header">
+                            Client Information
+                        </div>
+                        <div class="card-body">
+                            <p><strong>First Name:</strong> {{ $clientOrder->first_name }}</p>
+                            <p><strong>Last Name:</strong> {{ $clientOrder->last_name }}</p>
+                            <p><strong>Contact:</strong> {{ $clientOrder->contact_no }}</p>
+                            <p><strong>Email:</strong> {{ $clientOrder->email }}</p>
+                            <p><strong>Address:</strong> {{ $clientOrder->address }}</p>
+                            <p><strong>City:</strong> {{ $clientOrder->city }}</p>
+                            <p><strong>Country:</strong> {{ $clientOrder->country }}</p>
+                            <p><strong>Zip:</strong> {{ $clientOrder->zip }}</p>
+                        </div>
+                    </div>
+
+                    <!-- Display Order Information -->
+                    <div class="card mt-4">
+                        <div class="card-header">
+                            Order Information
+                        </div>
+                        <div class="card-body">
+                            <div class="card-body">
+                                @foreach ($cart as $cartItem)
+                                    @if ($cartItem->order_id == $clientOrder->id)
+                                    <p><strong>Product ID:</strong> {{ $cartItem->p_id }}</p>
+                                    <p><strong>Quantity:</strong> {{ $cartItem->quantity }}</p>
+                                    <p><strong>Color:</strong> {{ $cartItem->color }}</p>
+                                    <p><strong>Size:</strong> {{ $cartItem->size }}</p>
+                                    <hr>
+                                    @endif
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                    @endif
                 </div>
             </div>
         </div>
@@ -150,7 +168,7 @@
         document.getElementById('dashboardLink').addEventListener('click', function() {
             window.location.href = "{{ route('dashboard') }}";
         });
-        
+
         function noteRow($id) {
             // var url = '/deleteClientQuery/' + clientQueryId;
             window.location.href = "/deleteClientQuery/" + $id;

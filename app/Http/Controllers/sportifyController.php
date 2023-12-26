@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use App\Mail\OrderConfirmation;
 use App\Models\cart_table;
+use App\Models\Orders;
 
 
 
@@ -38,20 +39,7 @@ class sportifyController extends Controller
         return view("Admin.adminDelProds", compact('products'));
     }
 
-    public function destroy($id)
-    {
-        DB::beginTransaction();
-
-        $product = DB::table('product')->where('id', $id)->first();
-        $inventoryId = $product->inventory_id;
-        DB::table('product_inventory')->where('id', $inventoryId)->delete();
-        DB::table('product_attribute')->where('p_id', $id)->delete();
-
-        // DB::unprepared("delete from product where id = '$id'");
-        DB::table('product')->where('id', $id)->delete();
-
-        return redirect('/delprods')->with('deletionsuccess', 'Record deleted successfully');
-    }
+    
 
     // public function productDetail($id){
     //     // Cast $id to an integer
@@ -328,6 +316,22 @@ class sportifyController extends Controller
         return Redirect::route('index')->with('ordersuccess', 'Email sent successfully!');
     }
 
+
+    public function destroy($id)
+    {
+        DB::beginTransaction();
+
+        $product = DB::table('product')->where('id', $id)->first();
+        $inventoryId = $product->inventory_id;
+        DB::table('product_inventory')->where('id', $inventoryId)->delete();
+        DB::table('product_attribute')->where('p_id', $id)->delete();
+
+        // DB::unprepared("delete from product where id = '$id'");
+        DB::table('product')->where('id', $id)->delete();
+
+        return redirect('/delprods')->with('deletionsuccess', 'Record deleted successfully');
+    }
+
     public function admindashboard()
     {
         return view('Admin.admindashboard');
@@ -351,7 +355,7 @@ class sportifyController extends Controller
         return view('Admin.viewComplaints', ['clientQueries' => $clientQueries]);
     }
     
-
+    
     public function destroyClientQuery($id){
         DB::beginTransaction();
 
@@ -359,6 +363,12 @@ class sportifyController extends Controller
         return redirect('/client_queries')->with('deletionsuccess', 'Complaint removed successfully!');
     }
     
+    public function showClientOrders() {
+        $clientOrders = DB::table('order')->get();
+        $cart = DB::table('cart')->get();
+
+        return view('Admin.viewOrders', compact('clientOrders','cart'));
+    }
 
 
 }

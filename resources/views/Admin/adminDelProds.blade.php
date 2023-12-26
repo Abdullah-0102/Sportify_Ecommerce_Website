@@ -88,9 +88,9 @@
             <ul>
               <li><a href="{{ route('addProduct') }}">Add Product</a></li>
               <li><a href="{{ route('delprods') }}">Delete Product</a></li>
-              <li><a href="#">Edit Product</a></li>
-              <li><a href="#">View inventory</a></li>
-              <li><a href="#">Client Orders</a></li>
+              <!-- <li><a href="#">Edit Product</a></li> -->
+              <!-- <li><a href="#">View inventory</a></li> -->
+              <li><a href="{{ route('client_orders') }}">Client Orders</a></li>
               <li><a href="{{ route('client_queries') }}">View Complaints</a></li>
             </ul>
         </div>

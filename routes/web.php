@@ -50,7 +50,8 @@ Route::get('/addProduct', 'App\Http\Controllers\sportifyController@addProductPag
 Route::post('/insert', 'App\Http\Controllers\sportifyController@insert');
 
 Route::post('/insertClientQuery', 'App\Http\Controllers\sportifyController@storeClientQuery')->name('insertClientQuery');
-Route::get('/client_queries', 'App\Http\Controllers\sportifyController@showClientQueries')->name('client_queries');
 Route::get('/deleteClientQuery/{id}', 'App\Http\Controllers\sportifyController@destroyClientQuery');
+Route::get('/client_queries', 'App\Http\Controllers\sportifyController@showClientQueries')->name('client_queries');
+Route::get('/client_orders', 'App\Http\Controllers\sportifyController@showClientOrders')->name('client_orders');
 
 
